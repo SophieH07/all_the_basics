@@ -1,8 +1,9 @@
 main {
-  padding-top: 70px;
+  padding-top: 10%;
   letter-spacing:5px;
   cursor: default;
   text-align: center;
+  font-size: x-large;
 }
 /* Home */
 .home {
@@ -63,7 +64,6 @@ button {
   background-color: transparent;
   min-height: 1em;
   margin-top: 10px;
-  font-size: x-large;
   border: none;
 }
 

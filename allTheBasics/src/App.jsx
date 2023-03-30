@@ -5,7 +5,7 @@ import "./App.css";
 
 import Header from "./layout/Header";
 import TicTacToe from "./tictactoe/TicTacToe";
-import Stopwatch from "./stopwatch/Stopwatch";
+import Timer from "./timer/Timer";
 import TodoList from "./todolist/TodoList";
 import Posts from "./posts/Posts";
 
@@ -17,9 +17,10 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="tictactoe" element={<TicTacToe />} />
-          <Route path="stopwatch" element={<Stopwatch />} />
+          <Route path="timer" element={<Timer />} />
           <Route path="todolist" element={<TodoList />} />
           <Route path="posts" element={<Posts />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </main>
     </div>

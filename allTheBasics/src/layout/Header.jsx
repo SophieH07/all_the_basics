@@ -11,7 +11,7 @@ const Header = () => {
         <Link to="/tictactoe">Tic Tac Toe</Link>
       </div>
       <div>
-        <Link to="/stopwatch">Stopwatch</Link>
+        <Link to="/timer">Timer</Link>
       </div>
       <div>
         <Link to="/todolist">To-do list</Link>

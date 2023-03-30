@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center;
     border: 2px solid black;
-    font-size: xx-large;
+    /* font-size: xx-large; */
     cursor: pointer;
     width: 100px;
     height: 100px;
@@ -57,9 +57,9 @@
 
 }
 
-.new-game:hover {
+/* .new-game:hover {
     font-size: xx-large;
-}
+} */
 
 
 @keyframes boardIn {
