@@ -66,7 +66,7 @@ const TicTacToe = () => {
   };
 
   return (
-    <div className="content">
+    <div>
       <p>Let's play!</p>
       <p style={{ fontWeight: "bold" }}>
         {winner === "DRAW"
@@ -91,7 +91,9 @@ const TicTacToe = () => {
         </div>
       </div>
       <div>
-        <button onClick={handleAbort}>New Game</button>
+        <button className="new-game" onClick={handleAbort}>
+          New Game
+        </button>
       </div>
     </div>
   );

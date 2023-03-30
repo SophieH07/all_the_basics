@@ -1,8 +1,3 @@
-.content {
-    text-align: center;
-    font-size: large;
-}
-
 .game {
     width: 100%;
     display: flex;
@@ -46,20 +41,12 @@
     background-color: rgba(250, 245, 245, 0.3);
 }
 
-button {
-    color: rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    text-transform: uppercase;
-    background-color: transparent;
-    min-height: 1em;
-    margin-top: 10px;
-    font-size: x-large;
-    border: none;
+.new-game{
     animation: 1.5s buttonIn ease-in;
+
 }
 
-button:hover {
-    color: rgba(0, 0, 0, 1);
+.new-game:hover {
     font-size: xx-large;
 }
 
