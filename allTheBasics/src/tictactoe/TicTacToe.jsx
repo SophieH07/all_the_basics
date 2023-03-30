@@ -91,7 +91,7 @@ const TicTacToe = () => {
         </div>
       </div>
       <div>
-        <button className="new-game" onClick={handleAbort}>
+        <button className="new-game-button" onClick={handleAbort}>
           New Game
         </button>
       </div>
