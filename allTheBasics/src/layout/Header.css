@@ -1,0 +1,23 @@
+.header {
+    display: inline-flex;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.header a {
+    display: block;
+  color: white;
+  text-decoration: none;
+  text-shadow: #111011;
+  padding: 10px;
+}
+
+.header a:hover {
+    color: white;
+    background-image: linear-gradient(to left, rgb(146, 30, 156), rgb(114, 8, 114)) ;
+}
