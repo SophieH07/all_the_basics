@@ -11,10 +11,8 @@ const Stopwatch = () => {
         <label htmlFor="minutes">Minutes:</label>
         <input type="number" onChange={(e) => setMinutes(e.target.value)} />
         <label htmlFor="seconds"> Seconds:</label>
-        <input type="number" />
-        <button type="submit" onChange={(e) => setSeconds(e.target.value)}>
-          Start
-        </button>
+        <input type="number" onChange={(e) => setSeconds(e.target.value)} />
+        <button type="submit">Start</button>
       </form>
       <p></p>
     </div>
