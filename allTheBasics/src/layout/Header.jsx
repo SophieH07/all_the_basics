@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
@@ -12,6 +12,12 @@ const Header = () => {
       </div>
       <div>
         <Link to="/stopwatch">Stopwatch</Link>
+      </div>
+      <div>
+        <Link to="/todolist">To-do list</Link>
+      </div>
+      <div>
+        <Link to="/posts">Posts</Link>
       </div>
     </div>
   );

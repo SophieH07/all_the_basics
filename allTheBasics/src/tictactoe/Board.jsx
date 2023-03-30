@@ -2,16 +2,11 @@ import { useState } from "react";
 import Square from "./Square";
 import "./TicTacToe.css";
 
-const Board = ({ squares, xIsNext, setXIsNext }) => {
+const Board = ({ squares, handleClick }) => {
   return (
     <div className="board">
-      {squares.map((square) => (
-        <Square
-          key={square}
-          value={square}
-          xIsNext={xIsNext}
-          setXIsNext={setXIsNext}
-        />
+      {squares.map((square, i) => (
+        <Square key={i} value={square} handleClick={() => handleClick(i)} />
       ))}
     </div>
   );

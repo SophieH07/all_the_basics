@@ -1,6 +1,6 @@
 .content {
-    padding-left: 1em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: large;
 }
 
 .game {
@@ -8,6 +8,19 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
+}
+
+.winner-list {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 255px;
+    display: flex;
+    flex-direction: column;
+}
+
+.winner-list p {
+    animation: none;
 }
 
 .board {
@@ -16,6 +29,7 @@
     text-align: center;
     padding-right: 1em;
     grid-gap: 3px;
+    animation: 1.5s boardIn ease-out;
 }
 .square {
     display: flex;
@@ -29,5 +43,59 @@
 }
 
 .square:hover {
-    background-image: linear-gradient(to right, rgb(115, 42, 150), rgb(157, 103, 228));
+    background-color: rgba(250, 245, 245, 0.3);
 }
+
+button {
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: transparent;
+    min-height: 1em;
+    margin-top: 10px;
+    font-size: x-large;
+    border: none;
+    animation: 1.5s buttonIn ease-in;
+}
+
+button:hover {
+    color: rgba(0, 0, 0, 1);
+    font-size: xx-large;
+}
+
+
+@keyframes boardIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-80%);
+    }
+    20% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes buttonIn {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }

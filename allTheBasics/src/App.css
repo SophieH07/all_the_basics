@@ -1,32 +1,39 @@
 main {
-  padding-top: 50px;
+  padding-top: 70px;
+  letter-spacing:5px;
+  cursor: default;
+  
 }
 
 .home {
   position: relative;
-  font-size: 1em;
-  letter-spacing:5px;
-  font-family: sans-serif;
   margin-left:20%;
   margin-right: 20%;
-  cursor: default;
-  transition:.6s;
+  text-align: justify;
 }
 
-.home p:first-child {
-  animation: 1.5s textIn ease-out;
+.home p {
+  opacity: 0.75;
 }
-.home p:nth-child(2) {
-  animation: 1.7s textIn ease-out;
+
+.home p:hover {
+  opacity: 1;
 }
-.home p:nth-child(3) {
-  animation: 1.9s textIn ease-out;
+
+p:first-child {
+  animation: 1s textIn ease-out;
 }
-.home p:nth-child(4) {
-  animation: 2.1s textIn ease-out;
+p:nth-child(2) {
+  animation: 1.4s textIn ease-out;
 }
-.home p:nth-child(5) {
-  animation: 2.3s textIn ease-out;
+p:nth-child(3) {
+  animation: 1.8s textIn ease-out;
+}
+p:nth-child(4) {
+  animation: 2.2s textIn ease-out;
+}
+p:nth-child(5) {
+  animation: 2.6s textIn ease-out;
 }
 
 @keyframes textIn {
@@ -35,14 +42,14 @@ main {
     transform: translateX(80%);
   }
   20% {
-    opacity: 0;
+    opacity: 0.3;
   }
   50% {
-    opacity: 1;
+    opacity: 0.75;
     transform: translateX(0%);
   }
   100% {
-    opacity: 1;
+    opacity: 0.8;
     transform: translateX(0%);
   }
 }
