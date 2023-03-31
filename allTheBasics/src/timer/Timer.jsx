@@ -18,7 +18,6 @@ const Timer = () => {
       setIntervalId(0);
       return;
     }
-
     const newIntervalId = setInterval(() => {
       second -= 1;
       setTime([hour, minute, second]);
@@ -54,7 +53,6 @@ const Timer = () => {
     setIntervalId(0);
   };
 
-  //ONFOCUS AND ONBLUR NEEDS FIXING
   return (
     <div>
       <p>Timer</p>
@@ -66,11 +64,9 @@ const Timer = () => {
             value={!intervalId ? h : 0}
             onChange={(e) => setTime([e.target.value, m, s])}
             onFocus={(e) =>
-              h !== 0 ? (e.target.value = "") : (e.target.value = h)
+              h === 0 ? (e.target.value = "") : (e.target.value = h)
             }
-            onBlur={(e) =>
-              e.target.value === 0 ? (e.target.value = 0) : (e.target.value = h)
-            }
+            onBlur={(e) => (e.target.value = h)}
           />
         </div>
         <div>
@@ -85,11 +81,9 @@ const Timer = () => {
                 : setTime([h, e.target.value, s])
             }
             onFocus={(e) =>
-              m !== 0 ? (e.target.value = "") : (e.target.value = m)
+              m === 0 ? (e.target.value = "") : (e.target.value = m)
             }
-            onBlur={(e) =>
-              e.target.value !== 0 ? (e.target.value = 0) : (e.target.value = m)
-            }
+            onBlur={(e) => (e.target.value = m)}
           />
         </div>
         <div>
@@ -104,11 +98,9 @@ const Timer = () => {
                 : setTime([h, m, e.target.value])
             }
             onFocus={(e) =>
-              s !== 0 ? (e.target.value = "") : (e.target.value = s)
+              s === 0 ? (e.target.value = "") : (e.target.value = s)
             }
-            onBlur={(e) =>
-              e.target.value === 0 ? (e.target.value = 0) : (e.target.value = s)
-            }
+            onBlur={(e) => (e.target.value = s)}
           />
         </div>
       </div>

@@ -19,6 +19,7 @@ input {
     height: 5vh;
     font-size: x-large;
     overflow: hidden;
+    margin-left: 2vh;
 }
 
 input:focus {
