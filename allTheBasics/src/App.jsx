@@ -6,8 +6,8 @@ import "./App.css";
 import Header from "./layout/Header";
 import TicTacToe from "./tictactoe/TicTacToe";
 import Timer from "./timer/Timer";
-import TodoList from "./todolist/TodoList";
 import Posts from "./posts/Posts";
+import TodoList from "./todolist/TodoList";
 
 function App() {
   return (
