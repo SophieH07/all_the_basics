@@ -1,23 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import "./Timer.css";
 
 const Timer = () => {
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
-
-  let hour = 0;
-  let min = 0;
-  let sec = 0;
-
+  const [[h, m, s], setTime] = useState([0, 0, 0]);
   const [intervalId, setIntervalId] = useState(0);
 
-  useEffect(() => {
-    hour = hours;
-    min = minutes;
-    sec = seconds;
-  }, [hours, minutes, seconds]);
+  let hour = h;
+  let minute = m;
+  let second = s;
 
   const handleClick = () => {
+    if (hour === 0 && minute === 0 && second === 0) {
+      return;
+    }
     if (intervalId) {
       clearInterval(intervalId);
       setIntervalId(0);
@@ -25,29 +20,26 @@ const Timer = () => {
     }
 
     const newIntervalId = setInterval(() => {
-      sec -= 1;
-      setSeconds((sec) => sec - 1);
-      if (hour > 0 && min === 0 && sec === 0) {
-        hour -= 1;
-        setHours((h) => h - 1);
-        min = 59;
-        setMinutes(min);
-        sec = 59;
-        setSeconds(sec);
-      }
-      if (min > 0 && sec === 0) {
-        min -= 1;
-        setMinutes((min) => min - 1);
-        sec = 59;
-        setSeconds(sec);
-      }
-      if (sec === 0 && min === 0 && hour === 0) {
-        setHours(hour);
-        setMinutes(min);
-        setSeconds(sec);
-        clearInterval(intervalId);
+      second -= 1;
+      setTime([hour, minute, second]);
+      if (hour === 0 && minute === 0 && second === 0) {
         clearInterval(newIntervalId);
+        clearInterval(intervalId);
         setIntervalId(0);
+      }
+      if (second === 0) {
+        if (minute > 0) {
+          minute -= 1;
+          second = 59;
+          setTime([hour, minute, 59]);
+        } else {
+          if (h > 0) {
+            second -= 1;
+            minute = 59;
+            second = 59;
+            setTime([hour, 59, 59]);
+          }
+        }
       }
     }, 1000);
     setIntervalId(newIntervalId);
@@ -55,11 +47,9 @@ const Timer = () => {
 
   const handleReset = () => {
     hour = 0;
-    min = 0;
-    sec = 0;
-    setHours(0);
-    setMinutes(0);
-    setSeconds(0);
+    minute = 0;
+    second = 0;
+    setTime([0, 0, 0]);
     clearInterval(intervalId);
     setIntervalId(0);
   };
@@ -67,32 +57,52 @@ const Timer = () => {
   return (
     <div>
       <p>Timer</p>
-      <label htmlFor="hours">Hours:</label>
-      <input
-        type="number"
-        value={hours}
-        onChange={(e) => setHours(e.target.value)}
-      />
-      <label htmlFor="minutes"> Minutes:</label>
-      <input
-        type="number"
-        value={minutes}
-        onChange={(e) => setMinutes(e.target.value)}
-      />
-      <label htmlFor="seconds"> Seconds:</label>
-      <input
-        type="number"
-        value={seconds}
-        onChange={(e) => setSeconds(e.target.value)}
-      />
-      <button onClick={handleClick}>{!intervalId ? "Start" : "Pause"}</button>
-      <button type="button" onClick={handleReset}>
-        Reset
-      </button>
+      <div className="timer-inputs">
+        <div>
+          <label htmlFor="hours">Hours:</label>
+          <input
+            type="number"
+            value={!intervalId ? h : 0}
+            onChange={(e) => setTime([e.target.value, m, s])}
+          />
+        </div>
+        <div>
+          <label htmlFor="minutes"> Minutes:</label>
+          <input
+            type="number"
+            max={59}
+            value={!intervalId ? m : 0}
+            onChange={(e) =>
+              e.target.value > 59 || e.target.value < 0
+                ? setTime([h, 59, s])
+                : setTime([h, e.target.value, s])
+            }
+          />
+        </div>
+        <div>
+          <label htmlFor="seconds"> Seconds:</label>
+          <input
+            type="number"
+            max={59}
+            value={!intervalId ? s : 0}
+            onChange={(e) =>
+              e.target.value > 59 || e.target.value < 0
+                ? setTime([h, m, 59])
+                : setTime([h, m, e.target.value])
+            }
+          />
+        </div>
+      </div>
       <div>
-        <p>{`${hours.toString().padStart(2, "0")} : ${minutes
+        <p id="timer">{`${h.toString().padStart(2, "0")} : ${m
           .toString()
-          .padStart(2, "0")} : ${seconds.toString().padStart(2, "0")}`}</p>
+          .padStart(2, "0")} : ${s.toString().padStart(2, "0")}`}</p>
+      </div>
+      <div>
+        <button onClick={handleClick}>{!intervalId ? "Start" : "Pause"}</button>
+        <button type="button" onClick={handleReset}>
+          Reset
+        </button>
       </div>
     </div>
   );

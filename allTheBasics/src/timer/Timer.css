@@ -1,0 +1,36 @@
+#timer {
+    font-size: 10vh;
+}
+
+.timer-inputs {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: end;
+}
+
+.timer-inputs div {
+    padding-bottom: 7px;
+}
+
+input {
+    background: rgba(117, 83, 83, 0.3);
+    border: 1px solid black;
+    max-width: 8vh;
+    height: 5vh;
+    font-size: x-large;
+    overflow: hidden;
+}
+
+input:focus {
+    background: rgba(185, 174, 174, 0.3);
+    outline: none;
+}
+
+input:hover:not(:focus) {
+    background: rgba(133, 126, 126, 0.3);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}

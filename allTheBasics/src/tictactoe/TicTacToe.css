@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    padding-top: 2%;
 }
 
 .winner-list {
@@ -31,7 +32,7 @@
 
 .board {
     display: grid;
-    grid-template: repeat(3, 1fr) /repeat(3, 1fr);
+    grid-template: repeat(3, 2fr) /repeat(3, 2fr);
     text-align: center;
     padding-right: 1em;
     grid-gap: 3px;
@@ -42,24 +43,19 @@
     justify-content: center;
     align-items: center;
     border: 2px solid black;
-    /* font-size: xx-large; */
     cursor: pointer;
-    width: 100px;
-    height: 100px;
+    width: 15vh;
+    height: 15vh;
+    font-size: 15vh;
 }
 
 .square:hover {
     background-color: rgba(250, 245, 245, 0.3);
 }
 
-.new-game{
+.new-game-button{
     animation: 1.5s buttonIn ease-in;
-
 }
-
-/* .new-game:hover {
-    font-size: xx-large;
-} */
 
 
 @keyframes boardIn {
