@@ -1,6 +1,6 @@
 import React from "react";
 import TodoGroup from "./components/TodoGroup";
-import "./TodoApp.css";
+import "./TodoList.css";
 
 const TodoList = () => {
   return (

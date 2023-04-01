@@ -1,5 +1,5 @@
 import TodoItem from "./TodoItem";
-import "../TodoApp.css";
+import "../TodoList.css";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 const TodoGroup = () => {
