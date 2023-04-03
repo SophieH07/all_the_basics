@@ -8,6 +8,9 @@ import TicTacToe from "./tictactoe/TicTacToe";
 import Timer from "./timer/Timer";
 import Posts from "./posts/Posts";
 import TodoList from "./todolist/TodoList";
+import MissingPage from "./error/MissingPage";
+import Chess from "./chess/Chess";
+import Connect4 from "./connect4/Connect4";
 
 function App() {
   return (
@@ -20,7 +23,9 @@ function App() {
           <Route path="timer" element={<Timer />} />
           <Route path="todolist" element={<TodoList />} />
           <Route path="posts" element={<Posts />} />
-          <Route path="*" element={<Home />} />
+          <Route path="chess" element={<Chess />} />
+          <Route path="Connect4" element={<Connect4 />} />
+          <Route path="*" element={<MissingPage />} />
         </Routes>
       </main>
     </div>
